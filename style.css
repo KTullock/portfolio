@@ -1,5 +1,9 @@
 /* HEADER CODE */
 
+* {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
 body {
     background-color: #AFCBFF;
 }
@@ -14,6 +18,11 @@ footer {
     color: #AFCBFF;
     border-bottom: 10px solid white;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+footer {
+    justify-content: center;
+    border-bottom: none;
 }
 
 header h1 {
@@ -37,7 +46,7 @@ header nav ul li {
     margin-left: 25px;
 }
 
-a {
+header nav ul li a {
     color:#AFCBFF
 }
 
@@ -46,69 +55,37 @@ a {
 
 /* CONTAINERS */
 
-#container-1 {
-    background-color: #AFCBFF;
-    width: 90%;
-    height: 300px;
-    margin: 0 auto;
-    border: 5px solid #AFCBFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    flex-wrap: wrap;
-}
-
-#container-2 {
-    background-color: #AFCBFF;
-    width: 90%;
-    height: 700px;
-    margin: 0 auto;
-    border: 5px solid #AFCBFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    flex-wrap: wrap;
-}
-
+#container-1,
+#container-2,
 #container-3 {
     background-color: #AFCBFF;
     width: 90%;
-    height: 100px;
     margin: 0 auto;
     border: 5px solid #AFCBFF;
     display: flex;
     flex-direction: row;
     justify-content: start;
     flex-wrap: wrap;
+}
+
+#container-1{
+    height: 300px;
+
+}
+
+#container-2{
+    height: 700px;
+}
+
+#container-3 {
+    height: 100px;
 }
 
 
 /* TITLE CARDS */
 
-#title-card-1 {
-    height: 100%;
-    border-bottom: 10px solid #AFCBFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-basis: 100px;
-    flex-grow: 1;
-}
-
-#title-card-2 {
-    height: 100%;
-    border-bottom: 10px solid #AFCBFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    flex-basis: 100px;
-    flex-grow: 1;
-}
-
+#title-card-1,
+#title-card-2,
 #title-card-3 {
     height: 100%;
     border-bottom: 10px solid #AFCBFF;
@@ -124,31 +101,8 @@ a {
 
 /* CONTENT CARDS */
 
-#content-card-1 {
-    width: auto;
-    height: 100%;
-    border-bottom: 10px solid #AFCBFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    flex-basis: 200px;
-    flex-grow: 3;
-}
-
-#content-card-2 {
-    width: auto;
-    height: 100%;
-    border-bottom: 10px solid #AFCBFF;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    flex-basis: 200px;
-    flex-grow: 3;
-}
-
+#content-card-1,
+#content-card-2,
 #content-card-3 {
     width: auto;
     height: 100%;
@@ -156,15 +110,21 @@ a {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    align-items: center;
     flex-wrap: wrap;
     flex-basis: 200px;
     flex-grow: 3;
 }
 
+#content-card-1,
+#content-card-3 {
+    align-items: center;
+}
+
 #container-1 div h3,
 #container-2 div h3,
 #container-3 div h3 {
+    font-size:xx-large;
+    font-weight: 100;
     background-color: #AFCBFF;
     height: fit-content;
     width: fit-content;
@@ -175,7 +135,7 @@ a {
 .card-3,
 .card-4,
 .card-5 {
-    background-color: #0E1C36;
+    background-position: center;
     border: 3px solid #AFCBFF;
     width: 100%;
     height: 50%;
@@ -192,19 +152,33 @@ a {
 .card-3,
 .card-4,
 .card-5 {
-    background-color: white;
     width: 50%;
     height: 25%;
-    /* border: 5px solid #0E1C36; */
 }
 
-#content-card-1 p {
-    color: #0E1C36;
-    height: fit-content;
-    width: fit-content;
+.card-1 {
+    background-image: url(./images/my-landing-page.png);
 }
 
+.card-2 {
+    background-image: url(./images/horiseon-media-marketing.png);
+}
+
+.card-3 {
+    background-image: url(./images/prework-study-guide.png);
+}
+
+.card-4 {
+    background-image: url(./images/coming-soon.png);
+}
+
+.card-5 {
+    background-image: url(./images/coming-soon.png);
+}
+
+#content-card-1 p,
 #content-card-3 p {
+    padding: 5px 0 5px 0;
     color: #0E1C36;
     height: fit-content;
     width: fit-content;
@@ -238,9 +212,4 @@ a {
     background-color: white;
     border: 2px solid #0E1C36;
 
-}
-
-footer {
-    justify-content: center;
-    border-bottom: none;
 }
