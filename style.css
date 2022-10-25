@@ -1,5 +1,5 @@
-/* HEADER CODE */
 
+/* the universal selector sets the font-family of the whole website */
 * {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
@@ -8,6 +8,7 @@ body {
     background-color: #AFCBFF;
 }
 
+/* applies settings to the header and footer */
 header,
 footer {
     width: 100%;
@@ -16,7 +17,7 @@ footer {
     padding: 20px;
     background-color: #0E1C36;
     color: #AFCBFF;
-    border-bottom: 10px solid white;
+    border-bottom: 5px solid white;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -25,11 +26,17 @@ footer {
     border-bottom: none;
 }
 
+/* applies settings to the content within the header */
+header img {
+    width: 100px;
+    height: auto;
+    max-height: 110px;
+}
+
 header h1 {
     display: inline-block;
     font-size: 50px;
 }
-
 
 header nav {
     padding: 15px;
@@ -50,11 +57,7 @@ header nav ul li a {
     color:#AFCBFF
 }
 
-
-/* MAIN CODE */
-
-/* CONTAINERS */
-
+/* applies settings to each section within the main element */
 #container-1,
 #container-2,
 #container-3 {
@@ -68,12 +71,11 @@ header nav ul li a {
     flex-wrap: wrap;
 }
 
-#container-1{
-    height: 300px;
-
+#container-1 {
+    height: 250px;
 }
 
-#container-2{
+#container-2 {
     height: 700px;
 }
 
@@ -81,14 +83,13 @@ header nav ul li a {
     height: 100px;
 }
 
-
-/* TITLE CARDS */
-
+/* applies settings to the title cards of each section */
 #title-card-1,
 #title-card-2,
 #title-card-3 {
+    margin-bottom: 10px;
     height: 100%;
-    border-bottom: 10px solid #AFCBFF;
+    border-right: 5px solid #0E1C36;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -98,15 +99,13 @@ header nav ul li a {
     flex-grow: 1;
 }
 
-
-/* CONTENT CARDS */
-
+/* applies settings to the content cards of each section */
 #content-card-1,
 #content-card-2,
 #content-card-3 {
+    margin-left: 20px;
     width: auto;
     height: 100%;
-    border-bottom: 10px solid #AFCBFF;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -120,9 +119,26 @@ header nav ul li a {
     align-items: center;
 }
 
-#container-1 div h3,
-#container-2 div h3,
-#container-3 div h3 {
+#content-card-1 {
+    justify-content: space-around;
+}
+
+#content-card-1 p,
+#content-card-3 p {
+    padding: 5px 0 5px 0;
+    color: #0E1C36;
+    height: fit-content;
+    width: fit-content;
+}
+
+#content-card-3 p a {
+    color: #0E1C36;
+}
+
+/* applies settings to headings within the title card */
+#title-card-1 h3,
+#title-card-2 h3,
+#title-card-3 h3 {
     font-size:xx-large;
     font-weight: 100;
     background-color: #AFCBFF;
@@ -130,6 +146,7 @@ header nav ul li a {
     width: fit-content;
 }
 
+/* applies settings to the cards displaying my project images */
 .card-1,
 .card-2,
 .card-3,
@@ -147,13 +164,14 @@ header nav ul li a {
     align-items: center;
 }
 
-
 .card-2,
 .card-3,
 .card-4,
 .card-5 {
     width: 50%;
+    /* width: 100%; */
     height: 25%;
+    /* height: 19%; */
 }
 
 .card-1 {
@@ -176,40 +194,72 @@ header nav ul li a {
     background-image: url(./images/coming-soon.png);
 }
 
-#content-card-1 p,
-#content-card-3 p {
-    padding: 5px 0 5px 0;
-    color: #0E1C36;
-    height: fit-content;
-    width: fit-content;
-}
-
-#content-card-3 p a {
-    color: #0E1C36;
-}
-
-.card-1 h4,
-.card-2 h4,
-.card-3 h4,
-.card-4 h4,
-.card-5 h4 {
-    color: white;
-    background-color: #0E1C36;
-    line-height: 300%;
+/* applies settings to the buttons linked to my project pages */
+.button {
+    font-size: 17px;
     text-align: center;
-    border: 2px solid white;
-    height: fit-content;
-    width: 25%;
+    color: lightgray;
+    background-color: #0E1C36;
+    border: 2px solid lightgray;
     min-width:fit-content;
-    padding: 2px;
+    padding: 10px;
 }
 
-.card-2 h4,
-.card-3 h4,
-.card-4 h4,
-.card-5 h4 {
-    color: #0E1C36;
-    background-color: white;
-    border: 2px solid #0E1C36;
+.button:hover {
+    color: gray;
+    background-color: black;
+    border-color: gray;
+}
 
+/* adjusts the settings for the nav bar to go from a row to a column */
+@media screen and (max-width: 915px) {
+    header nav {
+        padding: 0;
+
+    }
+
+    header nav ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    header nav ul li {
+        height: fit-content;
+        width: fit-content;
+        padding: 5px;
+
+    }
+}
+
+/* adjust the settings for the project picture cards to be smaller and orient
+from a row to a column depending on the screen size */
+@media (max-width: 768px) {
+    .card-1,
+    .card-2,
+    .card-3,
+    .card-4,
+    .card-5 {
+        height: 24%;
+    }
+
+    .card-2,
+    .card-3,
+    .card-4,
+    .card-5 {
+        width: 100%;
+        height: 19%;
+    }
+
+    #content-card-3 {
+        flex-direction: column;
+    }
+}
+
+/* adjust the settings for the "About Me" paragraph container to get bigger 
+when the screen becomes too small */
+@media (max-width: 522px) {
+    #container-1 {
+        height: 400px;
+    }
 }
